@@ -11,6 +11,16 @@ import java.util.stream.Collectors;
  * @date 2022/3/19 15:22
  */
 public class FileUtils {
+    public static void appendText(String fileName, String text) {
+
+        try {
+            FileWriter writer = new FileWriter(fileName, true);
+            writer.write(text);
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     /**
      * 读取文件所有内容到字符串
