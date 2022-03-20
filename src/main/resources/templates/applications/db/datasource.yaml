@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    username: ${db.username}
+    password: ${db.password}
+    url: ${db.url}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-test-query: SELECT 1
+      connectionTimeout: 30000
+      idleTimeout: 30000
+      loginTimeout: 5
+      maxLifetime: 120000
+      maximumPoolSize: 15
+      minimumIdle: 5
+      pool-name: Hikari
+      validationTimeout: 3000
