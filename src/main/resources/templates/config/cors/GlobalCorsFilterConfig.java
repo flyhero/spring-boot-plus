@@ -1,4 +1,4 @@
-package ${t.packagePath};
+package ${config.packagePath};
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

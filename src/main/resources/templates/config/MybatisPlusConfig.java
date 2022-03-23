@@ -1,4 +1,4 @@
-package ${t.packagePath};
+package ${config.packagePath};
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;

@@ -1,4 +1,4 @@
-package ${t.packagePath};
+package ${config.packagePath};
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
@@ -9,10 +9,6 @@ import org.springframework.context.annotation.Configuration;
 import javax.annotation.Resource;
 import java.math.BigInteger;
 
-/**
- * @author WangQingFei(qfwang666 @ 163.com)
- * @date 2022/3/14 22:44
- */
 @Configuration
 public class JacksonConfig implements InitializingBean{
 
