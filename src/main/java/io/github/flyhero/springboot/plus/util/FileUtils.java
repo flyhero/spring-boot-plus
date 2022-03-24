@@ -53,7 +53,7 @@ public class FileUtils {
             e.printStackTrace();
         }
         BufferedReader br = new BufferedReader(isr);
-        return br.lines().collect(Collectors.joining("\n"));
+        return br.lines().collect(Collectors.joining("\n")) + "\n";
     }
 
 
@@ -74,8 +74,8 @@ public class FileUtils {
 
         } catch (Exception e) {
             e.printStackTrace();
-        }finally {
-            if (Objects.nonNull(bReader)){
+        } finally {
+            if (Objects.nonNull(bReader)) {
                 try {
                     bReader.close();
                 } catch (IOException e) {
