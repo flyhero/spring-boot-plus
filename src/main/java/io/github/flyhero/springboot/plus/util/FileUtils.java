@@ -4,6 +4,7 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
 import java.io.*;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
@@ -11,6 +12,21 @@ import java.util.stream.Collectors;
  * @date 2022/3/19 15:22
  */
 public class FileUtils {
+    public static void appendTextIfNotExist(String fileName, String text) {
+
+        try {
+            String s = readToString(fileName);
+            if (s.contains(text)) {
+                return;
+            }
+            FileWriter writer = new FileWriter(fileName, true);
+            writer.write(text);
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void appendText(String fileName, String text) {
 
         try {
@@ -28,7 +44,7 @@ public class FileUtils {
      * @param filePath resources下的文件路径
      * @return
      */
-    public static String readToString(String filePath) {
+    public static String readResourcesToString(String filePath) {
         Resource resource = new ClassPathResource(filePath);
         InputStreamReader isr = null;
         try {
@@ -38,6 +54,36 @@ public class FileUtils {
         }
         BufferedReader br = new BufferedReader(isr);
         return br.lines().collect(Collectors.joining("\n"));
+    }
+
+
+    public static String readToString(String filePath) {
+        File file = new File(filePath);
+        FileReader reader = null;
+        BufferedReader bReader = null;
+        StringBuilder sb = new StringBuilder();
+        try {
+            reader = new FileReader(file);
+            bReader = new BufferedReader(reader);
+
+            String s = "";
+            while ((s = bReader.readLine()) != null) {
+                sb.append(s).append("\n");
+            }
+            bReader.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            if (Objects.nonNull(bReader)){
+                try {
+                    bReader.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return sb.toString();
     }
 
     /**
