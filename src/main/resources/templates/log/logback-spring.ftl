@@ -2,16 +2,16 @@
 <configuration debug="false">
     <!--定义日志文件的存储地址 application.* 中 logging.file.path=/root/logs -->
     <property name="LOG_HOME"
-              value="${LOG_PATH:-.}"/>
+              value="${r'${LOG_PATH:-.}'}"/>
     <!-- 控制台输出设置 -->
-    <!-- 彩色日志格式，magenta：洋红，boldMagenta：粗红，yan：青色，·⊱══> -->
+    <!-- 彩色日志格式，magenta：洋红，boldMagenta：粗红，yan：青色，:-->
     <property name="CONSOLE_LOG_PATTERN"
-              value="%boldMagenta([%d{yyyy-MM-dd HH:mm:ss.SSS}]) %cyan([%X{requestId}]) %boldMagenta(%-5level) %blue(%logger{15}) %red([%thread]) %magenta(·⊱══>) %cyan(%msg%n)"/>
+              value="%boldMagenta([%d{yyyy-MM-dd HH:mm:ss.SSS}]) %cyan([%X{requestId}]) %boldMagenta(%-5level) %blue(%logger{15}) %red([%thread]) %magenta(:) %cyan(%msg%n)"/>
 
     <!-- 控制台 -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+            <pattern>${r'${CONSOLE_LOG_PATTERN}'}</pattern>
             <charset>utf8</charset>
         </encoder>
     </appender>
@@ -20,7 +20,7 @@
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- 日志文件输出的文件名 -->
-            <FileNamePattern>${LOG_HOME}/%d{yyyy-MM-dd}_info.%i.log
+            <FileNamePattern>${r'${LOG_HOME}'}/%d{yyyy-MM-dd}_info.%i.log
             </FileNamePattern>
             <!-- 日志文件保留天数 -->
             <MaxHistory>7</MaxHistory>

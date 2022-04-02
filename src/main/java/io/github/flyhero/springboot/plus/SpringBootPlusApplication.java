@@ -1,16 +1,12 @@
 package io.github.flyhero.springboot.plus;
 
+import io.github.flyhero.springboot.plus.generator.AbstractGenerator;
+import io.github.flyhero.springboot.plus.generator.GeneratorRegister;
+import io.github.flyhero.springboot.plus.config.PlusConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 
-import java.io.*;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @SpringBootApplication
 public class SpringBootPlusApplication {

@@ -1,4 +1,4 @@
-package {api.packagePath};
+package ${packageName};
 
 import lombok.Data;
 

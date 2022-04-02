@@ -1,11 +1,11 @@
-package {api.packagePath};
+package ${packageName}.exception;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import {packagePath}.model.Result;
+import ${packageName}.model.Result;
 
 
 @Slf4j

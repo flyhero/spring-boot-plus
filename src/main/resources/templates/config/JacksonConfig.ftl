@@ -1,4 +1,4 @@
-package ${config.packagePath};
+package ${packageName}
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
@@ -15,6 +15,9 @@ public class JacksonConfig implements InitializingBean{
     @Resource
     ObjectMapper objectMapper;
 
+    /**
+     * 长整形转字符串：解决长度过长，前端无法处理
+     */
     private SimpleModule getSimpleModule() {
         SimpleModule simpleModule = new SimpleModule();
         simpleModule.addSerializer(BigInteger.class, ToStringSerializer.instance);
