@@ -11,7 +11,9 @@ public class PlusConfig {
 
     // 代码路径
     public static final String codePath = "src/main/java/";
-    //资源路径
+    // 测试代码路径
+    public static final String testPath = "src/test/java/";
+    // 资源路径
     public static final String resourcesPath = "src/main/resources/";
 
     private String outputDir = System.getProperty("os.name").toLowerCase().contains("windows") ? "D://" : "/tmp/";;
