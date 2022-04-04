@@ -29,7 +29,8 @@ public class MybatisPlusGenerator extends AbstractGenerator {
     public Object customProcessFun(PlusConfig plusConfig) {
         FastAutoGenerator.create(plusConfig.getDataSourceConfig().getUrl(), plusConfig.getDataSourceConfig().getUsername(), plusConfig.getDataSourceConfig().getPassword())
                 .globalConfig(builder -> {
-                    builder.outputDir(plusConfig.getOutputDir() + plusConfig.getProjectConfig().getName() + "/"
+                    builder.disableOpenDir()
+                            .outputDir(plusConfig.getOutputDir() + plusConfig.getProjectConfig().getName() + "/"
                             + PlusConfig.codePath); // 指定输出目录
                 })
                 .packageConfig(builder -> {
