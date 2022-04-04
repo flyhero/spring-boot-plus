@@ -1,4 +1,4 @@
-server.address=8080
+server.port=8080
 spring.application.name=${name}
 
 <#if hasDbConfig>
