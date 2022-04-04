@@ -40,6 +40,8 @@ public class MybatisPlusGenerator extends AbstractGenerator {
                 .strategyConfig(builder -> {
                     builder.addInclude(plusConfig.getDataSourceConfig().getTableNames()) // 设置需要生成的表名
                             .addTablePrefix("t_", "c_") // 设置过滤表前缀
+                            .controllerBuilder()
+                            .enableRestStyle() //Rest风格
                             .entityBuilder()
                             .enableLombok()
                             .enableColumnConstant();
