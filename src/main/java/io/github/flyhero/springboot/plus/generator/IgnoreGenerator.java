@@ -13,7 +13,7 @@ import java.io.File;
 public class IgnoreGenerator extends AbstractGenerator {
     @Override
     public String getFullFilePath(PlusConfig plusConfig) {
-        return plusConfig.getOutputDir() + plusConfig.getProjectInfo().getArtifactId() + File.separator +
+        return plusConfig.getOutputDir() + plusConfig.getProjectConfig().getArtifactId() + File.separator +
                 ".gitignore";
     }
 

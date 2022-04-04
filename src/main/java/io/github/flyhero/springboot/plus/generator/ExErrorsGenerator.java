@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 public class ExErrorsGenerator extends AbstractGenerator {
     @Override
     public String getFullFilePath(PlusConfig plusConfig) {
-        return plusConfig.getOutputDir() + plusConfig.getProjectInfo().getName() + "/"
+        return plusConfig.getOutputDir() + plusConfig.getProjectConfig().getName() + "/"
                 + PlusConfig.codePath + plusConfig.getPackagePath() + "exception/" +
                 "Errors.java";
     }

@@ -18,9 +18,12 @@ public class PlusConfig {
 
     private String outputDir = System.getProperty("os.name").toLowerCase().contains("windows") ? "D://" : "/tmp/";;
 
-    private ProjectInfo projectInfo;
+    private ProjectConfig projectConfig;
 
     private DataSourceConfig dataSourceConfig;
+
+    // jdbc  hib mybatis
+    private String ormWay = "";
 
     private boolean useMybatisPlus;
 
@@ -41,7 +44,8 @@ public class PlusConfig {
      * @return 包名称
      */
     public String getPackageName(){
-        return this.projectInfo.getGroupId() + "." +this.projectInfo.getArtifactId();
+        String lowerCase = this.projectConfig.getArtifactId().replace("-", ".").replace("_", ".").toLowerCase();
+        return this.projectConfig.getGroupId() + "." + lowerCase;
     }
     /**
      * group + artifact
@@ -62,7 +66,7 @@ public class PlusConfig {
     }
 
     @Data
-    public static class ProjectInfo {
+    public static class ProjectConfig {
         private String groupId;
         private String artifactId;
         private String name;

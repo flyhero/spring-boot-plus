@@ -29,13 +29,13 @@ public class MybatisPlusGenerator extends AbstractGenerator {
     public Object customProcessFun(PlusConfig plusConfig) {
         FastAutoGenerator.create(plusConfig.getDataSourceConfig().getUrl(), plusConfig.getDataSourceConfig().getUsername(), plusConfig.getDataSourceConfig().getPassword())
                 .globalConfig(builder -> {
-                    builder.outputDir(plusConfig.getOutputDir() + plusConfig.getProjectInfo().getName() + "/"
+                    builder.outputDir(plusConfig.getOutputDir() + plusConfig.getProjectConfig().getName() + "/"
                             + PlusConfig.codePath); // 指定输出目录
                 })
                 .packageConfig(builder -> {
                     builder.parent(plusConfig.getPackageName()) // 设置父包名
                             .pathInfo(Collections.singletonMap(OutputFile.xml,
-                                    plusConfig.getOutputDir() + plusConfig.getProjectInfo().getName() + "/" + PlusConfig.resourcesPath + "mapper")); // 设置mapperXml生成路径
+                                    plusConfig.getOutputDir() + plusConfig.getProjectConfig().getName() + "/" + PlusConfig.resourcesPath + "mapper")); // 设置mapperXml生成路径
                 })
                 .strategyConfig(builder -> {
                     builder.addInclude(plusConfig.getDataSourceConfig().getTableNames()) // 设置需要生成的表名

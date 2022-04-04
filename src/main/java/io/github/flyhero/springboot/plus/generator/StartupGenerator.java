@@ -14,8 +14,8 @@ public class StartupGenerator extends AbstractGenerator {
 
     @Override
     public String getFullFilePath(PlusConfig plusConfig) {
-        String applicationJavaName = toCamel(plusConfig.getProjectInfo().getArtifactId());
-        return plusConfig.getOutputDir() + plusConfig.getProjectInfo().getName() + "/" + PlusConfig.codePath
+        String applicationJavaName = toCamel(plusConfig.getProjectConfig().getArtifactId());
+        return plusConfig.getOutputDir() + plusConfig.getProjectConfig().getName() + "/" + PlusConfig.codePath
                 + plusConfig.getPackagePath() + applicationJavaName + ".java";
     }
 
@@ -26,7 +26,7 @@ public class StartupGenerator extends AbstractGenerator {
 
     @Override
     public Object getDataModel(PlusConfig plusConfig) {
-        String applicationJavaName = toCamel(plusConfig.getProjectInfo().getArtifactId());
+        String applicationJavaName = toCamel(plusConfig.getProjectConfig().getArtifactId());
         return ImmutableMap.of("packageName", plusConfig.getPackageName(), "className", applicationJavaName);
     }
 

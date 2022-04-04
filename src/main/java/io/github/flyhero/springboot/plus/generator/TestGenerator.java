@@ -10,8 +10,8 @@ public class TestGenerator extends AbstractGenerator {
 
     @Override
     public String getFullFilePath(PlusConfig plusConfig) {
-        String applicationJavaName = toCamel(plusConfig.getProjectInfo().getArtifactId());
-        return plusConfig.getOutputDir() + plusConfig.getProjectInfo().getName() + "/"
+        String applicationJavaName = toCamel(plusConfig.getProjectConfig().getArtifactId());
+        return plusConfig.getOutputDir() + plusConfig.getProjectConfig().getName() + "/"
                 + PlusConfig.testPath + plusConfig.getPackagePath() +
                 applicationJavaName + ".java";
     }
@@ -23,7 +23,7 @@ public class TestGenerator extends AbstractGenerator {
 
     @Override
     public Object getDataModel(PlusConfig plusConfig) {
-        String applicationJavaName = toCamel(plusConfig.getProjectInfo().getArtifactId());
+        String applicationJavaName = toCamel(plusConfig.getProjectConfig().getArtifactId());
         return ImmutableMap.of("packageName", plusConfig.getPackageName(), "className", applicationJavaName);
     }
 

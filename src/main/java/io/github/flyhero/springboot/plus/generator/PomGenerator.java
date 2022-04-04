@@ -15,7 +15,7 @@ import java.util.Map;
 public class PomGenerator extends AbstractGenerator {
     @Override
     public String getFullFilePath(PlusConfig plusConfig) {
-        return plusConfig.getOutputDir() + plusConfig.getProjectInfo().getArtifactId() + File.separator + "pom.xml";
+        return plusConfig.getOutputDir() + plusConfig.getProjectConfig().getArtifactId() + File.separator + "pom.xml";
     }
 
     @Override
@@ -25,7 +25,7 @@ public class PomGenerator extends AbstractGenerator {
 
     @Override
     public Object getDataModel(PlusConfig plusConfig) {
-        Map<String, Object> map = EntityUtils.entityToMap(plusConfig.getProjectInfo());
+        Map<String, Object> map = EntityUtils.entityToMap(plusConfig.getProjectConfig());
         map.put("useMybatisPlus", plusConfig.isUseMybatisPlus());
         map.put("dataSourceType", plusConfig.getDataSourceConfig().getType());
         return map;

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 public class log4j2Generator extends AbstractGenerator {
     @Override
     public String getFullFilePath(PlusConfig plusConfig) {
-        return plusConfig.getOutputDir() + plusConfig.getProjectInfo().getName() + "/"
+        return plusConfig.getOutputDir() + plusConfig.getProjectConfig().getName() + "/"
                 + PlusConfig.resourcesPath + "log4j2-spring.xml";
     }
 
@@ -23,7 +23,7 @@ public class log4j2Generator extends AbstractGenerator {
 
     @Override
     public Object getDataModel(PlusConfig plusConfig) {
-        return ImmutableMap.of("name", plusConfig.getProjectInfo().getName());
+        return ImmutableMap.of("name", plusConfig.getProjectConfig().getName());
     }
 
     @Override
