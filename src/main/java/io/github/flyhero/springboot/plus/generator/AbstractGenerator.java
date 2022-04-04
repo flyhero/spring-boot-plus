@@ -41,6 +41,11 @@ public abstract class AbstractGenerator implements InitializingBean {
         if (!isCreate(plusConfig)) {
             return;
         }
+        if (isCustomProcess()) {
+            Object o = customProcessFun(plusConfig);
+            log.info("执行了自定义处理流程：{}", o);
+            return;
+        }
         String fileName = getFullFilePath(plusConfig);
         Object dataModel = getDataModel(plusConfig);
         String template = getTemplate();
@@ -53,13 +58,29 @@ public abstract class AbstractGenerator implements InitializingBean {
     }
 
     /**
-     * 钩子方法
+     * 钩子方法，是否需要创建
      *
      * @param plusConfig 配置
      * @return 是否需要创建
      */
     public boolean isCreate(PlusConfig plusConfig) {
         return true;
+    }
+
+    /**
+     * @return 是否需要自定义处理流程
+     */
+    public boolean isCustomProcess() {
+        return false;
+    }
+
+    /**
+     * 不适合普通处理流程，可自定义处理流程
+     *
+     * @param plusConfig 配置
+     */
+    public Object customProcessFun(PlusConfig plusConfig) {
+        return null;
     }
 
     public abstract String getFullFilePath(PlusConfig plusConfig);
