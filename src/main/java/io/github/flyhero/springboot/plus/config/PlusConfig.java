@@ -37,7 +37,7 @@ public class PlusConfig {
     private String logWay = "logback";
 
     //Hikari or Druid
-    private String dataSource = "Hikari";
+    private String dataSourceType = "Hikari";
 
     /**
      * group + artifact

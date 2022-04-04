@@ -31,6 +31,19 @@
             <version>3.5.1</version>
         </dependency>
     </#if>
+    <#if dataSourceType == "Hikari">
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+    </#if>
+    <#if dataSourceType == "Druid">
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>1.2.8</version>
+        </dependency>
+    </#if>
 
         <dependency>
             <groupId>mysql</groupId>
