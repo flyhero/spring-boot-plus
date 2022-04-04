@@ -27,4 +27,9 @@ public class log4j2Generator extends AbstractGenerator {
     public Object getDataModel(PlusConfig plusConfig) {
         return ImmutableMap.of("name", plusConfig.getProjectInfo().getName());
     }
+
+    @Override
+    public boolean isCreate(PlusConfig plusConfig) {
+        return "log4j2".equals(plusConfig.getLogWay());
+    }
 }

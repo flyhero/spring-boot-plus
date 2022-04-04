@@ -26,4 +26,9 @@ public class logbackGenerator extends AbstractGenerator {
     public Object getDataModel(PlusConfig plusConfig) {
         return plusConfig;
     }
+
+    @Override
+    public boolean isCreate(PlusConfig plusConfig) {
+        return "logback".equals(plusConfig.getLogWay());
+    }
 }
