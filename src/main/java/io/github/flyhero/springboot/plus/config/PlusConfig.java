@@ -36,9 +36,6 @@ public class PlusConfig {
     // logback or log4j2
     private String logWay = "logback";
 
-    //Hikari or Druid
-    private String dataSourceType = "Hikari";
-
     /**
      * group + artifact
      * @return 包名称
@@ -60,6 +57,8 @@ public class PlusConfig {
         private String password;
         private String url;
         private String[] tableNames;
+        //Hikari or Druid
+        private String type = "Hikari";
     }
 
     @Data

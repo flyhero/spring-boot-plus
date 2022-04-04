@@ -3,8 +3,6 @@ package io.github.flyhero.springboot.plus.generator;
 import io.github.flyhero.springboot.plus.config.PlusConfig;
 import org.springframework.stereotype.Component;
 
-import java.io.File;
-
 /**
  * @author WangQingFei(qfwang666 @ 163.com)
  * @date 2022/4/1 22:34

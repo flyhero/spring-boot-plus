@@ -4,7 +4,6 @@ import io.github.flyhero.springboot.plus.config.PlusConfig;
 import io.github.flyhero.springboot.plus.util.EntityUtils;
 import org.springframework.stereotype.Component;
 
-import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -37,7 +36,7 @@ public class ApplicationPropertiesGenerator extends AbstractGenerator {
         }
         map.put("name", plusConfig.getProjectInfo().getName());
         map.put("useMybatisPlus", plusConfig.isUseMybatisPlus());
-        map.put("dataSourceType", plusConfig.getDataSourceType());
+        map.put("dataSourceType", plusConfig.getDataSourceConfig().getType());
         map.put("logWay", plusConfig.getLogWay());
         return map;
     }

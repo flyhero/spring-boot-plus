@@ -1,11 +1,9 @@
 package io.github.flyhero.springboot.plus.generator;
 
 import io.github.flyhero.springboot.plus.config.PlusConfig;
-import io.github.flyhero.springboot.plus.util.EntityUtils;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
-import java.util.Map;
 
 /**
  * @author WangQingFei(qfwang666 @ 163.com)

@@ -1,8 +1,8 @@
 package io.github.flyhero.springboot.plus;
 
+import io.github.flyhero.springboot.plus.config.PlusConfig;
 import io.github.flyhero.springboot.plus.generator.AbstractGenerator;
 import io.github.flyhero.springboot.plus.generator.GeneratorRegister;
-import io.github.flyhero.springboot.plus.config.PlusConfig;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

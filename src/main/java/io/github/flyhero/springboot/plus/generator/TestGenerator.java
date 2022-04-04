@@ -4,7 +4,6 @@ import com.google.common.base.CaseFormat;
 import com.google.common.collect.ImmutableMap;
 import io.github.flyhero.springboot.plus.config.PlusConfig;
 import org.springframework.stereotype.Component;
-import java.io.File;
 
 @Component
 public class TestGenerator extends AbstractGenerator {

@@ -27,7 +27,7 @@ public class PomGenerator extends AbstractGenerator {
     public Object getDataModel(PlusConfig plusConfig) {
         Map<String, Object> map = EntityUtils.entityToMap(plusConfig.getProjectInfo());
         map.put("useMybatisPlus", plusConfig.isUseMybatisPlus());
-        map.put("dataSourceType", plusConfig.getDataSourceType());
+        map.put("dataSourceType", plusConfig.getDataSourceConfig().getType());
         return map;
     }
 
