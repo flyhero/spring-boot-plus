@@ -10,10 +10,11 @@ import java.io.File;
 public class TestGenerator extends AbstractGenerator {
 
     @Override
-    public File getFile(PlusConfig plusConfig) {
+    public String getFullFilePath(PlusConfig plusConfig) {
         String applicationJavaName = toCamel(plusConfig.getProjectInfo().getArtifactId());
-        return new File(plusConfig.getOutputDir() + plusConfig.getProjectInfo().getName() + "/" + PlusConfig.testPath + plusConfig.getPackagePath(),
-                applicationJavaName + ".java");
+        return plusConfig.getOutputDir() + plusConfig.getProjectInfo().getName() + "/"
+                + PlusConfig.testPath + plusConfig.getPackagePath() +
+                applicationJavaName + ".java";
     }
 
     @Override

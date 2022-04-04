@@ -14,9 +14,9 @@ import java.util.Map;
 @Component
 public class IgnoreGenerator extends AbstractGenerator {
     @Override
-    public File getFile(PlusConfig plusConfig) {
-        return new File(plusConfig.getOutputDir() + plusConfig.getProjectInfo().getArtifactId(),
-                ".gitignore");
+    public String getFullFilePath(PlusConfig plusConfig) {
+        return plusConfig.getOutputDir() + plusConfig.getProjectInfo().getArtifactId() + File.separator +
+                ".gitignore";
     }
 
     @Override

@@ -13,10 +13,10 @@ import java.io.File;
 @Component
 public class CorsGenerator extends AbstractGenerator {
     @Override
-    public File getFile(PlusConfig plusConfig) {
-        return new File(plusConfig.getOutputDir() + plusConfig.getProjectInfo().getName() + "/"
-                + PlusConfig.codePath + plusConfig.getPackagePath() + "config/",
-                "GlobalCorsFilterConfig.java");
+    public String getFullFilePath(PlusConfig plusConfig) {
+        return plusConfig.getOutputDir() + plusConfig.getProjectInfo().getName() + "/"
+                + PlusConfig.codePath + plusConfig.getPackagePath() + "config/" +
+                "GlobalCorsFilterConfig.java";
     }
 
     @Override

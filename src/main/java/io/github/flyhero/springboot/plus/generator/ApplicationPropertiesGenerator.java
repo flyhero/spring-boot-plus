@@ -16,9 +16,9 @@ import java.util.Objects;
 @Component
 public class ApplicationPropertiesGenerator extends AbstractGenerator {
     @Override
-    public File getFile(PlusConfig plusConfig) {
-        return new File(plusConfig.getOutputDir() + plusConfig.getProjectInfo().getName() + "/" + PlusConfig.resourcesPath,
-                "application.properties");
+    public String getFullFilePath(PlusConfig plusConfig) {
+        return plusConfig.getOutputDir() + plusConfig.getProjectInfo().getName() + "/"
+                + PlusConfig.resourcesPath + "application.properties";
     }
 
     @Override
@@ -37,7 +37,7 @@ public class ApplicationPropertiesGenerator extends AbstractGenerator {
         }
         map.put("name", plusConfig.getProjectInfo().getName());
         map.put("useMybatisPlus", plusConfig.isUseMybatisPlus());
-        map.put("dataSource", plusConfig.getDataSource());
+        map.put("dataSourceType", plusConfig.getDataSourceType());
         map.put("logWay", plusConfig.getLogWay());
         return map;
     }

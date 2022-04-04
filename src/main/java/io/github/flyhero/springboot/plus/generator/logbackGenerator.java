@@ -12,9 +12,9 @@ import java.io.File;
 @Component
 public class logbackGenerator extends AbstractGenerator {
     @Override
-    public File getFile(PlusConfig plusConfig) {
-        return new File(plusConfig.getOutputDir() + plusConfig.getProjectInfo().getName() + "/" + PlusConfig.resourcesPath,
-                "logback-spring.xml");
+    public String getFullFilePath(PlusConfig plusConfig) {
+        return plusConfig.getOutputDir() + plusConfig.getProjectInfo().getName() + "/"
+                + PlusConfig.resourcesPath + "logback-spring.xml";
     }
 
     @Override

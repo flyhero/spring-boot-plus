@@ -13,10 +13,10 @@ import java.io.File;
 @Component
 public class ExHandlerGenerator extends AbstractGenerator {
     @Override
-    public File getFile(PlusConfig plusConfig) {
-        return new File(plusConfig.getOutputDir() + plusConfig.getProjectInfo().getName() + "/"
-                + PlusConfig.codePath + plusConfig.getPackagePath() + "exception/",
-                "GlobalExceptionHandler.java");
+    public String getFullFilePath(PlusConfig plusConfig) {
+        return plusConfig.getOutputDir() + plusConfig.getProjectInfo().getName() + "/"
+                + PlusConfig.codePath + plusConfig.getPackagePath() + "exception/" +
+                "GlobalExceptionHandler.java";
     }
 
     @Override

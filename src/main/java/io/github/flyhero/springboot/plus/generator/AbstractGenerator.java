@@ -41,15 +41,15 @@ public abstract class AbstractGenerator implements InitializingBean {
         if (!isCreate(plusConfig)) {
             return;
         }
-        File file = getFile(plusConfig);
+        String fileName = getFullFilePath(plusConfig);
         Object dataModel = getDataModel(plusConfig);
         String template = getTemplate();
         try {
-            createFile(file, template, dataModel);
+            createFile(new File(fileName), template, dataModel);
         } catch (IOException | TemplateException e) {
-            log.error("生成文件失败：{}", file.getName(), e);
+            log.error("生成文件失败：{}", fileName, e);
         }
-        log.info("生成文件：{}", file.getName());
+        log.info("生成文件：{}", fileName);
     }
 
     /**
@@ -62,7 +62,7 @@ public abstract class AbstractGenerator implements InitializingBean {
         return true;
     }
 
-    public abstract File getFile(PlusConfig plusConfig);
+    public abstract String getFullFilePath(PlusConfig plusConfig);
 
     public abstract String getTemplate();
 

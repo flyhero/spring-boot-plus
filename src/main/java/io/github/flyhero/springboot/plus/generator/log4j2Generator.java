@@ -13,9 +13,9 @@ import java.io.File;
 @Component
 public class log4j2Generator extends AbstractGenerator {
     @Override
-    public File getFile(PlusConfig plusConfig) {
-        return new File(plusConfig.getOutputDir() + plusConfig.getProjectInfo().getName() + "/" + PlusConfig.resourcesPath,
-                "log4j2-spring.xml");
+    public String getFullFilePath(PlusConfig plusConfig) {
+        return plusConfig.getOutputDir() + plusConfig.getProjectInfo().getName() + "/"
+                + PlusConfig.resourcesPath + "log4j2-spring.xml";
     }
 
     @Override
