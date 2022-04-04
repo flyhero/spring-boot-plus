@@ -16,7 +16,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler({MethodArgumentNotValidException.class})
     public Result handler(MethodArgumentNotValidException ex) {
         FieldError fieldError = ex.getBindingResult().getFieldError();
-        return Result.error(fieldError.getField() + fieldError.getDefaultMessage());
+        return Result.error(400, fieldError.getField() + fieldError.getDefaultMessage());
     }
 
     @ExceptionHandler({Exception.class})

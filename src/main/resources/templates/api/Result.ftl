@@ -1,7 +1,7 @@
-package ${packageName};
+package ${packageName}.model;
 
 import lombok.Data;
-
+import ${packageName}.exception.Errors;
 
 @Data
 public class Result<T> {

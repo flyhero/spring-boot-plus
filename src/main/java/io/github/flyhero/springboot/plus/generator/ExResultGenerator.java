@@ -26,6 +26,6 @@ public class ExResultGenerator extends AbstractGenerator {
 
     @Override
     public Object getDataModel(PlusConfig plusConfig) {
-        return ImmutableMap.of("packageName", plusConfig.getPackageName() + ".model");
+        return ImmutableMap.of("packageName", plusConfig.getPackageName());
     }
 }
