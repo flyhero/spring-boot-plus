@@ -9,7 +9,7 @@ import java.util.List;
  * @author WangQingFei(qfwang666 @ 163.com)
  * @date 2022/4/2 11:39
  */
-public final class GeneratorRegister {
+public final class GeneratorRegistrar {
 
     private static final List<AbstractGenerator> GENERATORS = new ArrayList<>();
 

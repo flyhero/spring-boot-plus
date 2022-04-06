@@ -2,7 +2,7 @@ package io.github.flyhero.springboot.plus;
 
 import io.github.flyhero.springboot.plus.config.PlusConfig;
 import io.github.flyhero.springboot.plus.generator.AbstractGenerator;
-import io.github.flyhero.springboot.plus.generator.GeneratorRegister;
+import io.github.flyhero.springboot.plus.generator.GeneratorRegistrar;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -18,7 +18,7 @@ public class ProjectGenerator implements IProjectGenerator {
 
     @Override
     public void doGenerate(PlusConfig plusConfig) {
-        List<AbstractGenerator> generators = GeneratorRegister.getGenerators();
+        List<AbstractGenerator> generators = GeneratorRegistrar.getGenerators();
         for (AbstractGenerator generator : generators) {
             generator.process(plusConfig);
         }

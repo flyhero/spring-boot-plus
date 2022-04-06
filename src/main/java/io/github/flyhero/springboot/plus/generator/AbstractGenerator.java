@@ -97,7 +97,7 @@ public abstract class AbstractGenerator implements InitializingBean {
      */
     @Override
     public void afterPropertiesSet() throws Exception {
-        GeneratorRegister.register(this);
+        GeneratorRegistrar.register(this);
     }
 
 
