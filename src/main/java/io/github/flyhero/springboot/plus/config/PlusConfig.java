@@ -2,6 +2,9 @@ package io.github.flyhero.springboot.plus.config;
 
 import lombok.Data;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author WangQingFei(qfwang666 @ 163.com)
  * @date 2022/4/1 21:52
@@ -21,6 +24,8 @@ public class PlusConfig {
     private ProjectConfig projectConfig;
 
     private DataSourceConfig dataSourceConfig;
+
+    private List<Dependency> dependencies = new ArrayList<>();
 
     // jdbc  hib mybatis
     private String ormWay = "";
@@ -73,5 +78,12 @@ public class PlusConfig {
         private String description;
     }
 
+    @Data
+    public static class Dependency {
+        private Long dependencyId;
+        private String groupId;
+        private String artifactId;
+        private String version;
+    }
 
 }
