@@ -6,7 +6,7 @@ import io.github.flyhero.springboot.plus.config.PlusConfig;
 import org.springframework.stereotype.Component;
 
 @Component
-public class TestGenerator extends AbstractGenerator {
+public class TestApplicationGenerator extends AbstractGenerator {
 
     @Override
     public String getFullFilePath(PlusConfig plusConfig) {
