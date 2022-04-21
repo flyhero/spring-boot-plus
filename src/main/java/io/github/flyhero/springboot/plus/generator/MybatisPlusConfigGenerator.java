@@ -24,6 +24,7 @@ public class MybatisPlusConfigGenerator extends AbstractGenerator {
 
     @Override
     public Object getDataModel(PlusConfig plusConfig) {
+        plusConfig.getDependencies().add("mybatis-plus");
         return ImmutableMap.of("packageName", plusConfig.getPackageName() + ".config");
     }
 

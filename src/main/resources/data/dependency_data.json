@@ -1,0 +1,786 @@
+[
+  {
+    "name": "Developer Tools",
+    "values": [
+      {
+        "id": "native",
+        "name": "Spring Native [Experimental]",
+        "description": "Incubating support for compiling Spring applications to native executables using the GraalVM native-image compiler.",
+        "versionRange": "[2.4.3,2.7.0-M1)",
+        "_links": {
+          "reference": {
+            "href": "https://docs.spring.io/spring-native/docs/current/reference/htmlsingle/",
+            "title": "Spring Native Reference Guide"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "Web",
+    "values": [
+      {
+        "id": "web",
+        "name": "Spring Web"
+      },
+      {
+        "id": "webflux",
+        "name": "Spring Reactive Web"
+      },
+      {
+        "id": "graphql",
+        "name": "Spring GraphQL",
+        "description": "Build GraphQL applications with Spring GraphQL and GraphQL Java.",
+        "versionRange": "[2.7.0.M1,3.0.0-M1)"
+      },
+      {
+        "id": "session",
+        "name": "Spring Session",
+        "dependency": {
+          "groupId": "org.springframework.boot",
+          "artifactId": "spring-boot-starter-webflux",
+          "version": null,
+          "optional": null,
+          "scope": null
+        }
+      },
+      {
+        "id": "web-services",
+        "name": "Spring Web Services"
+      },
+      {
+        "id": "jersey",
+        "name": "Jersey"
+      },
+      {
+        "id": "vaadin",
+        "name": "Vaadin"
+      }
+    ]
+  },
+  {
+    "name": "Template Engines",
+    "values": [
+      {
+        "id": "thymeleaf",
+        "name": "Thymeleaf"
+      },
+      {
+        "id": "freemarker",
+        "name": "Apache Freemarker"
+      },
+      {
+        "id": "mustache",
+        "name": "Mustache"
+      },
+      {
+        "id": "groovy-templates",
+        "name": "Groovy Templates"
+      }
+    ]
+  },
+  {
+    "name": "Security",
+    "values": [
+      {
+        "id": "security",
+        "name": "Spring Security",
+        "dependency": {
+          "groupId": "org.springframework.boot",
+          "artifactId": "spring-boot-starter-security",
+          "version": null,
+          "optional": null,
+          "scope": null
+        }
+      },
+      {
+        "id": "oauth2-client",
+        "name": "OAuth2 Client"
+      },
+      {
+        "id": "oauth2-resource-server",
+        "name": "OAuth2 Resource Server"
+      },
+      {
+        "id": "data-ldap",
+        "name": "Spring LDAP"
+      },
+      {
+        "id": "okta",
+        "name": "Okta"
+      }
+    ]
+  },
+  {
+    "name": "SQL",
+    "values": [
+      {
+        "id": "jdbc",
+        "name": "JDBC API",
+        "dependency": {
+          "groupId": "org.springframework.boot",
+          "artifactId": "spring-boot-starter-data-jdbc",
+          "version": null,
+          "optional": null,
+          "scope": null
+        }
+      },
+      {
+        "id": "data-jpa",
+        "name": "Spring Data JPA",
+        "dependency": {
+          "groupId": "org.springframework.boot",
+          "artifactId": "spring-boot-starter-data-jpa",
+          "version": null,
+          "optional": null,
+          "scope": null
+        }
+      },
+      {
+        "id": "data-jdbc",
+        "name": "Spring Data JDBC",
+        "dependency": {
+          "groupId": "org.springframework.boot",
+          "artifactId": "spring-boot-starter-data-jdbc",
+          "version": null,
+          "optional": null,
+          "scope": null
+        }
+      },
+      {
+        "id": "data-r2dbc",
+        "name": "Spring Data R2DBC",
+        "dependency": {
+          "groupId": "org.springframework.boot",
+          "artifactId": "spring-boot-starter-data-r2dbc",
+          "version": null,
+          "optional": null,
+          "scope": null
+        }
+      },
+      {
+        "id": "mybatis",
+        "name": "MyBatis Framework",
+        "description": "Persistence framework with support for custom SQL, stored procedures and advanced mappings. MyBatis couples objects with stored procedures or SQL statements using a XML descriptor or annotations.",
+        "versionRange": "[2.0.0.RELEASE,3.1.0-M1)",
+        "dependency": {
+          "groupId": "org.mybatis.spring.boot",
+          "artifactId": "mybatis-spring-boot-starter",
+          "version": "2.2.2",
+          "optional": null,
+          "scope": null
+        }
+      },
+      {
+        "id": "liquibase",
+        "name": "Liquibase Migration",
+        "dependency": {
+          "groupId": "org.liquibase",
+          "artifactId": "liquibase-core",
+          "version": null,
+          "optional": null,
+          "scope": null
+        }
+      },
+      {
+        "id": "flyway",
+        "name": "Flyway Migration",
+        "dependency": {
+          "groupId": "org.flywaydb",
+          "artifactId": "flyway-core",
+          "version": null,
+          "optional": null,
+          "scope": null
+        }
+      },
+      {
+        "id": "jooq",
+        "name": "JOOQ Access Layer",
+        "dependency": {
+          "groupId": "org.springframework.boot",
+          "artifactId": "spring-boot-starter-jooq",
+          "version": null,
+          "optional": null,
+          "scope": null
+        }
+      },
+      {
+        "id": "db2",
+        "name": "IBM DB2 Driver",
+        "dependency": {
+          "groupId": "com.ibm.db2",
+          "artifactId": "jcc",
+          "version": null,
+          "optional": null,
+          "scope": "runtime"
+        },
+        "versionRange": "2.2.0.M6"
+      },
+      {
+        "id": "derby",
+        "name": "Apache Derby Database",
+        "dependency": {
+          "groupId": "org.apache.derby",
+          "artifactId": "derby",
+          "version": null,
+          "optional": null,
+          "scope": "runtime"
+        }
+      },
+      {
+        "id": "h2",
+        "name": "H2 Database",
+        "dependency": {
+          "groupId": "com.h2database",
+          "artifactId": "h2",
+          "version": null,
+          "optional": null,
+          "scope": "runtime"
+        }
+      },
+      {
+        "id": "hsql",
+        "name": "HyperSQL Database",
+        "dependency": {
+          "groupId": "org.hsqldb",
+          "artifactId": "hsqldb",
+          "version": null,
+          "optional": null,
+          "scope": "runtime"
+        }
+      },
+      {
+        "id": "mariadb",
+        "name": "MariaDB Driver",
+        "dependency": {
+          "groupId": "org.mariadb.jdbc",
+          "artifactId": "mariadb-java-client",
+          "version": null,
+          "optional": null,
+          "scope": "runtime"
+        }
+      },
+      {
+        "id": "sqlserver",
+        "name": "MS SQL Server Driver",
+        "dependency": {
+          "groupId": "com.microsoft.sqlserver",
+          "artifactId": "mssql-jdbc",
+          "version": null,
+          "optional": null,
+          "scope": "runtime"
+        }
+      },
+      {
+        "id": "mysql",
+        "name": "MySQL Driver",
+        "dependency": {
+          "groupId": "mysql",
+          "artifactId": "mysql-connector-java",
+          "version": null,
+          "optional": null,
+          "scope": "runtime"
+        }
+      },
+      {
+        "id": "oracle",
+        "name": "Oracle Driver",
+        "dependency": {
+          "groupId": "com.oracle.database.jdbc",
+          "artifactId": "ojdbc8",
+          "version": null,
+          "optional": null,
+          "scope": "runtime"
+        }
+      },
+      {
+        "id": "postgresql",
+        "name": "PostgreSQL Driver",
+        "description": "A JDBC and R2DBC driver that allows Java programs to connect to a PostgreSQL database using standard, database independent Java code.",
+        "dependency": {
+          "groupId": "io.r2dbc",
+          "artifactId": "r2dbc-postgresql",
+          "version": null,
+          "optional": null,
+          "scope": "runtime"
+        }
+      },
+      {
+        "id": "Druid",
+        "name": "Druid DataSource",
+        "description": "Druid, 阿里巴巴开源数据库连接池。",
+        "dependency": {
+          "groupId": "com.alibaba",
+          "artifactId": "druid-spring-boot-starter",
+          "version": "1.2.8",
+          "optional": null,
+          "scope": null
+        }
+      },
+      {
+        "id": "Hikari",
+        "name": "Hikari DataSource",
+        "dependency": {
+          "groupId": "org.springframework.boot",
+          "artifactId": "spring-boot-starter-jdbc",
+          "version": null,
+          "optional": null,
+          "scope": null
+        }
+      },
+      {
+        "id": "mybatis",
+        "name": "MyBatis Framework",
+        "description": "Persistence framework with support for custom SQL, stored procedures and advanced mappings. MyBatis couples objects with stored procedures or SQL statements using a XML descriptor or annotations.",
+        "versionRange": "[2.0.0.RELEASE,3.1.0-M1)",
+        "dependency": {
+          "groupId": "org.mybatis.spring.boot",
+          "artifactId": "mybatis-spring-boot-starter",
+          "version": "2.2.2",
+          "optional": null,
+          "scope": null
+        }
+      },
+      {
+        "id": "mybatis-plus",
+        "name": "MyBatisPlus Framework",
+        "dependency": {
+          "groupId": "com.baomidou",
+          "artifactId": "mybatis-plus-boot-starter",
+          "version": "3.5.1",
+          "optional": null,
+          "scope": null
+        }
+      }
+    ]
+  },
+  {
+    "name": "NoSQL",
+    "values": [
+      {
+        "id": "data-redis",
+        "name": "Spring Data Redis (Access+Driver)",
+        "dependency": {
+          "groupId": "org.springframework.boot",
+          "artifactId": "spring-boot-starter-data-redis",
+          "version": null,
+          "optional": null,
+          "scope": null
+        }
+      },
+      {
+        "id": "data-redis-reactive",
+        "name": "Spring Data Reactive Redis",
+        "description": "Access Redis key-value data stores in a reactive fashion with Spring Data Redis.",
+        "dependency": {
+          "groupId": "org.springframework.boot",
+          "artifactId": "spring-boot-starter-data-redis-reactive",
+          "version": null,
+          "optional": null,
+          "scope": null
+        }
+      },
+      {
+        "id": "data-mongodb",
+        "name": "Spring Data MongoDB",
+        "description": "Store data in flexible, JSON-like documents, meaning fields can vary from document to document and data structure can be changed over time.",
+        "dependency": {
+          "groupId": "org.springframework.boot",
+          "artifactId": "spring-boot-starter-data-mongodb",
+          "version": null,
+          "optional": null,
+          "scope": null
+        },
+        "_links": {
+          "guide": {
+            "href": "https://spring.io/guides/gs/accessing-data-mongodb/",
+            "title": "Accessing Data with MongoDB"
+          },
+          "reference": {
+            "href": "https://docs.spring.io/spring-boot/docs/{bootVersion}/reference/htmlsingle/#boot-features-mongodb",
+            "templated": true
+          }
+        }
+      },
+      {
+        "id": "data-mongodb-reactive",
+        "name": "Spring Data Reactive MongoDB",
+        "description": "Provides asynchronous stream processing with non-blocking back pressure for MongoDB.",
+        "dependency": {
+          "groupId": "org.springframework.boot",
+          "artifactId": "spring-boot-starter-data-mongodb-reactive",
+          "version": null,
+          "optional": null,
+          "scope": null
+        },
+        "_links": {
+          "reference": {
+            "href": "https://docs.spring.io/spring-boot/docs/{bootVersion}/reference/htmlsingle/#boot-features-mongodb",
+            "templated": true
+          },
+          "guide": {
+            "href": "https://spring.io/guides/gs/accessing-data-mongodb/",
+            "title": "Accessing Data with MongoDB"
+          }
+        }
+      },
+      {
+        "id": "data-elasticsearch",
+        "name": "Spring Data Elasticsearch (Access+Driver)",
+        "description": "A distributed, RESTful search and analytics engine with Spring Data Elasticsearch.",
+        "dependency": {
+          "groupId": "org.springframework.boot",
+          "artifactId": "spring-boot-starter-data-elasticsearch",
+          "version": null,
+          "optional": null,
+          "scope": null
+        },
+        "_links": {
+          "reference": {
+            "href": "https://docs.spring.io/spring-boot/docs/{bootVersion}/reference/htmlsingle/#boot-features-elasticsearch",
+            "templated": true
+          }
+        }
+      },
+      {
+        "id": "data-cassandra",
+        "name": "Spring Data for Apache Cassandra",
+        "description": "A free and open-source, distributed, NoSQL database management system that offers high-scalability and high-performance.",
+        "dependency": {
+          "groupId": "org.springframework.boot",
+          "artifactId": "spring-boot-starter-data-cassandra",
+          "version": null,
+          "optional": null,
+          "scope": null
+        },
+        "_links": {
+          "reference": {
+            "href": "https://docs.spring.io/spring-boot/docs/{bootVersion}/reference/htmlsingle/#boot-features-cassandra",
+            "templated": true
+          },
+          "guide": {
+            "href": "https://spring.io/guides/gs/accessing-data-cassandra/"
+          }
+        }
+      },
+      {
+        "id": "data-cassandra-reactive",
+        "name": "Spring Data Reactive for Apache Cassandra",
+        "description": "Access Cassandra NoSQL Database in a reactive fashion.",
+        "dependency": {
+          "groupId": "org.springframework.boot",
+          "artifactId": "spring-boot-starter-data-cassandra-reactive",
+          "version": null,
+          "optional": null,
+          "scope": null
+        },
+        "_links": {
+          "reference": {
+            "href": "https://docs.spring.io/spring-boot/docs/{bootVersion}/reference/htmlsingle/#boot-features-cassandra",
+            "templated": true
+          },
+          "guide": {
+            "href": "https://spring.io/guides/gs/accessing-data-cassandra/"
+          }
+        }
+      },
+      {
+        "id": "data-neo4j",
+        "name": "Spring Data Neo4j",
+        "description": "An open source NoSQL database that stores data structured as graphs consisting of nodes, connected by relationships.",
+        "dependency": {
+          "groupId": "org.springframework.boot",
+          "artifactId": "spring-boot-starter-data-neo4j",
+          "version": null,
+          "optional": null,
+          "scope": null
+        },
+        "_links": {
+          "guide": {
+            "href": "https://spring.io/guides/gs/accessing-data-neo4j/",
+            "title": "Accessing Data with Neo4j"
+          },
+          "reference": {
+            "href": "https://docs.spring.io/spring-boot/docs/{bootVersion}/reference/htmlsingle/#boot-features-neo4j",
+            "templated": true
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "Messaging",
+    "values": [
+      {
+        "id": "amqp",
+        "name": "Spring for RabbitMQ",
+        "description": "Gives your applications a common platform to send and receive messages, and your messages a safe place to live until received.",
+        "dependency": {
+          "groupId": "org.springframework.boot",
+          "artifactId": "spring-boot-starter-amqp",
+          "version": null,
+          "optional": null,
+          "scope": null
+        },
+        "_links": {
+          "guide": {
+            "href": "https://spring.io/guides/gs/messaging-rabbitmq/",
+            "title": "Messaging with RabbitMQ"
+          },
+          "reference": {
+            "href": "https://docs.spring.io/spring-boot/docs/{bootVersion}/reference/htmlsingle/#boot-features-amqp",
+            "templated": true
+          }
+        }
+      },
+      {
+        "id": "kafka",
+        "name": "Spring for Apache Kafka",
+        "description": "Publish, subscribe, store, and process streams of records.",
+        "dependency": {
+          "groupId": "org.springframework.kafka",
+          "artifactId": "spring-kafka",
+          "version": null,
+          "optional": null,
+          "scope": null
+        },
+        "_links": {
+          "reference": {
+            "href": "https://docs.spring.io/spring-boot/docs/{bootVersion}/reference/htmlsingle/#boot-features-kafka",
+            "templated": true
+          }
+        }
+      },
+      {
+        "id": "activemq",
+        "name": "Spring for Apache ActiveMQ 5",
+        "description": "Spring JMS support with Apache ActiveMQ \u0027Classic\u0027.",
+        "dependency": {
+          "groupId": "org.springframework.boot",
+          "artifactId": "spring-boot-starter-activemq",
+          "version": null,
+          "optional": null,
+          "scope": null
+        },
+        "versionRange": "[2.0.0.RELEASE,3.0.0-M1)",
+        "_links": {
+          "guide": {
+            "href": "https://spring.io/guides/gs/messaging-jms/",
+            "title": "Java Message Service API via Apache ActiveMQ Classic."
+          },
+          "reference": {
+            "href": "https://docs.spring.io/spring-boot/docs/{bootVersion}/reference/htmlsingle/#boot-features-activemq",
+            "templated": true
+          }
+        }
+      },
+      {
+        "id": "websocket",
+        "name": "WebSocket",
+        "description": "Build WebSocket applications with SockJS and STOMP.",
+        "dependency": {
+          "groupId": "org.springframework.boot",
+          "artifactId": "spring-boot-starter-websocket",
+          "version": null,
+          "optional": null,
+          "scope": null
+        },
+        "_links": {
+          "guide": {
+            "href": "https://spring.io/guides/gs/messaging-stomp-websocket/",
+            "title": "Using WebSocket to build an interactive web application"
+          },
+          "reference": {
+            "href": "https://docs.spring.io/spring-boot/docs/{bootVersion}/reference/htmlsingle/#boot-features-websockets",
+            "templated": true
+          }
+        }
+      },
+      {
+        "id": "rsocket",
+        "name": "RSocket",
+        "description": "RSocket.io applications with Spring Messaging and Netty.",
+        "dependency": {
+          "groupId": "org.springframework.boot",
+          "artifactId": "spring-boot-starter-rsocket",
+          "version": null,
+          "optional": null,
+          "scope": null
+        },
+        "versionRange": "2.2.0.M2",
+        "_links": {
+          "reference": {
+            "href": "https://rsocket.io/"
+          }
+        }
+      },
+      {
+        "id": "camel",
+        "name": "Apache Camel",
+        "description": "Apache Camel is an open source integration framework that empowers you to quickly and easily integrate various systems consuming or producing data.",
+        "dependency": {
+          "groupId": "org.apache.camel.springboot",
+          "artifactId": "camel-spring-boot-starter",
+          "version": "3.16.0",
+          "optional": null,
+          "scope": null
+        },
+        "versionRange": "[2.0.0.M1,2.7.0-M1)",
+        "_links": {
+          "guide": {
+            "href": "https://camel.apache.org/camel-spring-boot/latest/spring-boot.html",
+            "title": "Using Apache Camel with Spring Boot"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "I/O",
+    "values": [
+      {
+        "id": "batch",
+        "name": "Spring Batch",
+        "description": "Batch applications with transactions, retry/skip and chunk based processing.",
+        "dependency": {
+          "groupId": "org.springframework.boot",
+          "artifactId": "spring-boot-starter-batch",
+          "version": null,
+          "optional": null,
+          "scope": null
+        },
+        "_links": {
+          "guide": {
+            "href": "https://spring.io/guides/gs/batch-processing/",
+            "title": "Creating a Batch Service"
+          },
+          "reference": {
+            "href": "https://docs.spring.io/spring-boot/docs/{bootVersion}/reference/htmlsingle/#howto-batch-applications",
+            "templated": true
+          }
+        }
+      },
+      {
+        "id": "validation",
+        "name": "Validation",
+        "description": "Bean Validation with Hibernate validator.",
+        "dependency": {
+          "groupId": "org.springframework.boot",
+          "artifactId": "spring-boot-starter-validation",
+          "version": null,
+          "optional": null,
+          "scope": null
+        },
+        "_links": {
+          "reference": {
+            "href": "https://docs.spring.io/spring-boot/docs/{bootVersion}/reference/htmlsingle/#boot-features-validation",
+            "templated": true
+          },
+          "guide": {
+            "href": "https://spring.io/guides/gs/validating-form-input/"
+          }
+        }
+      },
+      {
+        "id": "mail",
+        "name": "Java Mail Sender",
+        "description": "Send email using Java Mail and Spring Framework\u0027s JavaMailSender.",
+        "dependency": {
+          "groupId": "org.springframework.boot",
+          "artifactId": "spring-boot-starter-mail",
+          "version": null,
+          "optional": null,
+          "scope": null
+        },
+        "_links": {
+          "reference": {
+            "href": "https://docs.spring.io/spring-boot/docs/{bootVersion}/reference/htmlsingle/#boot-features-email",
+            "templated": true
+          }
+        }
+      },
+      {
+        "id": "quartz",
+        "name": "Quartz Scheduler",
+        "description": "Schedule jobs using Quartz.",
+        "dependency": {
+          "groupId": "org.springframework.boot",
+          "artifactId": "spring-boot-starter-quartz",
+          "version": null,
+          "optional": null,
+          "scope": null
+        },
+        "_links": {
+          "reference": {
+            "href": "https://docs.spring.io/spring-boot/docs/{bootVersion}/reference/htmlsingle/#boot-features-quartz",
+            "templated": true
+          }
+        }
+      },
+      {
+        "id": "cache",
+        "name": "Spring cache abstraction",
+        "description": "Provides cache-related operations, such as the ability to update the content of the cache, but does not provide the actual data store.",
+        "dependency": {
+          "groupId": "org.springframework.boot",
+          "artifactId": "spring-boot-starter-cache",
+          "version": null,
+          "optional": null,
+          "scope": null
+        },
+        "_links": {
+          "guide": {
+            "href": "https://spring.io/guides/gs/caching/",
+            "title": "Caching Data with Spring"
+          },
+          "reference": {
+            "href": "https://docs.spring.io/spring-boot/docs/{bootVersion}/reference/htmlsingle/#boot-features-caching",
+            "templated": true
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "Ops",
+    "values": [
+      {
+        "id": "actuator",
+        "name": "Spring Boot Actuator",
+        "description": "Supports built in (or custom) endpoints that let you monitor and manage your application - such as application health, metrics, sessions, etc.",
+        "_links": {
+          "guide": {
+            "href": "https://spring.io/guides/gs/actuator-service/",
+            "title": "Building a RESTful Web Service with Spring Boot Actuator"
+          },
+          "reference": {
+            "href": "https://docs.spring.io/spring-boot/docs/{bootVersion}/reference/htmlsingle/#production-ready",
+            "templated": true
+          }
+        }
+      },
+      {
+        "id": "codecentric-spring-boot-admin-client",
+        "name": "Codecentric\u0027s Spring Boot Admin (Client)",
+        "description": "Required for your application to register with a Codecentric\u0027s Spring Boot Admin Server instance.",
+        "versionRange": "[2.0.0.RELEASE,2.7.0-M1)",
+        "_links": {
+          "reference": {
+            "href": "https://codecentric.github.io/spring-boot-admin/current/#getting-started"
+          }
+        }
+      },
+      {
+        "id": "codecentric-spring-boot-admin-server",
+        "name": "Codecentric\u0027s Spring Boot Admin (Server)",
+        "description": "A community project to manage and monitor your Spring Boot applications. Provides a UI on top of the Spring Boot Actuator endpoints.",
+        "versionRange": "[2.0.0.RELEASE,2.7.0-M1)",
+        "_links": {
+          "reference": {
+            "href": "https://codecentric.github.io/spring-boot-admin/current/#getting-started"
+          }
+        }
+      }
+    ]
+  }
+]

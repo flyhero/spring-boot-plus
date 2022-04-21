@@ -25,7 +25,7 @@ public class PlusConfig {
 
     private DataSourceConfig dataSourceConfig;
 
-    private List<Dependency> dependencies = new ArrayList<>();
+    private List<String> dependencies = new ArrayList<>();
 
     // jdbc  hib mybatis
     private String ormWay = "";
@@ -76,14 +76,14 @@ public class PlusConfig {
         private String artifactId;
         private String name;
         private String description;
-    }
-
-    @Data
-    public static class Dependency {
-        private Long dependencyId;
-        private String groupId;
-        private String artifactId;
         private String version;
+        private String packageName;
+
+        private String bootVersion;
+
+        private String language;
+        private String javaVersion;
+        private String packaging;
     }
 
 }

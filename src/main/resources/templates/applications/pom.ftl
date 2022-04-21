@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.6.6</version>
+        <version>${bootVersion!"2.6.6"}</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -16,34 +16,25 @@
     <description>${description}</description>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>${javaVersion!"1.8"}</java.version>
     </properties>
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
 
-    <#if useMybatisPlus>
+    <#list dependencies as dep>
         <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.5.1</version>
+            <groupId>${dep.groupId}</groupId>
+            <artifactId>${dep.artifactId}</artifactId>
+        <#if dep.version??>
+            <version>${dep.version}</version>
+        </#if>
+        <#if dep.optional??>
+            <optional>${dep.optional}</optional>
+        </#if>
+        <#if dep.scope??>
+            <scope>${dep.scope}</scope>
+        </#if>
         </dependency>
-    </#if>
-    <#if dataSourceType == "Hikari">
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jdbc</artifactId>
-        </dependency>
-    </#if>
-    <#if dataSourceType == "Druid">
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid-spring-boot-starter</artifactId>
-            <version>1.2.8</version>
-        </dependency>
-    </#if>
+    </#list>
 
         <dependency>
             <groupId>mysql</groupId>
