@@ -30,18 +30,18 @@ springboot代码生成器，主要用于对一些常用功能的自动配置，�
 在测试类或启动类中进行如下设置：
 
 ```java
-        PlusConfig.ProjectConfig projectConfig = new PlusConfig.ProjectConfig();
-        projectConfig.setGroupId("com.github.flyhero");
-        projectConfig.setArtifactId("demo-test");
-        projectConfig.setName("demo-test");
-        projectConfig.setDescription("desc");
+        PlusConfig.ProjectConfig projectConfig = PlusConfig.ProjectConfig.builder().groupId("com.github.flyhero")
+        .artifactId("demo-test")
+        .name("demo-test")
+        .description("desc")
+        .build();
 
-        PlusConfig.DataSourceConfig dataSourceConfig = new PlusConfig.DataSourceConfig();
-        dataSourceConfig.setUsername("username");
-        dataSourceConfig.setPassword("password");
-        dataSourceConfig.setType("Druid");
-        dataSourceConfig.setUrl("jdbc:mysql://127.0.0.1:3306/test");
-        dataSourceConfig.setTableNames(new String[]{"test"});
+        PlusConfig.DataSourceConfig dataSourceConfig = PlusConfig.DataSourceConfig.builder()
+        .username("***")
+        .password("***")
+        .type(PlusConfig.DataSourceConfig.DataSourceType.Druid)
+        .url("jdbc:mysql://127.0.0.1:3306/test")
+        .tableNames(new String[]{"test"}).build();
 
         PlusConfig plusConfig = new PlusConfig();
         plusConfig.setUseCors(true);

@@ -38,7 +38,7 @@ public class PomGenerator extends AbstractGenerator {
     @Override
     public Object getDataModel(PlusConfig plusConfig) {
         Map<String, Object> map = EntityUtils.entityToMap(plusConfig.getProjectConfig());
-        plusConfig.getDependencies().add(plusConfig.getDataSourceConfig().getType());
+        plusConfig.getDependencies().add(plusConfig.getDataSourceConfig().getType().name());
         List<String> dependenciesStrs = plusConfig.getDependencies();
         List<Dependency> dependencies = new ArrayList<>();
         for (DependencyData dependency : dataLoader.getDependencies()) {

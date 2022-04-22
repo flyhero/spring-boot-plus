@@ -1,6 +1,9 @@
 package io.github.flyhero.springboot.plus.config;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,16 +64,27 @@ public class PlusConfig {
     }
 
     @Data
+    @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor
     public static class DataSourceConfig {
         private String username;
         private String password;
         private String url;
         private String[] tableNames;
         //Hikari or Druid
-        private String type = "Hikari";
+        @Builder.Default
+        private DataSourceType type = DataSourceType.Hikari;
+
+        public enum DataSourceType{
+            Hikari,Druid
+        }
     }
 
     @Data
+    @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor
     public static class ProjectConfig {
         private String groupId;
         private String artifactId;
@@ -84,6 +98,7 @@ public class PlusConfig {
         private String language;
         private String javaVersion;
         private String packaging;
+
     }
 
 }

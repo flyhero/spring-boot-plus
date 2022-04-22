@@ -36,7 +36,7 @@ public class ApplicationPropertiesGenerator extends AbstractGenerator {
         }
         map.put("name", plusConfig.getProjectConfig().getName());
         map.put("useMybatisPlus", plusConfig.isUseMybatisPlus());
-        map.put("dataSourceType", plusConfig.getDataSourceConfig().getType());
+        map.put("dataSourceType", plusConfig.getDataSourceConfig().getType().name());
         map.put("logWay", plusConfig.getLogWay());
         return map;
     }
