@@ -1,4 +1,4 @@
-package io.github.flyhero.springboot.plus.config;
+package ${packageName};
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -7,11 +7,11 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
- * 跨域配置
+ * web拦截配置： 包括跨域配置、登录拦截等
  */
 @Configuration
-public class GlobalCorsWebMvcConfig implements WebMvcConfigurer {
-
+public class GlobalWebMvcConfig implements WebMvcConfigurer {
+<#if useCors>
     /**
      * 注册 cors 拦截器
      * 注意 springboot 2.2 （spring 5.2）版本之下慎用：低版本会将cors拦截器添加到所有拦截器中最后一个，如果前面出错，是走不到cors的。
@@ -29,7 +29,8 @@ public class GlobalCorsWebMvcConfig implements WebMvcConfigurer {
                 .allowedHeaders("*")
                 .exposedHeaders("*");
     }
-
+</#if>
+<#if useInterceptor>
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         WebMvcConfigurer.super.addInterceptors(registry);
@@ -48,4 +49,5 @@ public class GlobalCorsWebMvcConfig implements WebMvcConfigurer {
     public static class TestInterceptor implements HandlerInterceptor {
 
     }
+</#if>
 }

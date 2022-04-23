@@ -9,26 +9,27 @@ import org.springframework.stereotype.Component;
  * @date 2022/4/1 22:34
  */
 @Component
-public class CorsGenerator extends AbstractGenerator {
+public class WebMvcConfigGenerator extends AbstractGenerator {
     @Override
     public String getFullFilePath(PlusConfig plusConfig) {
         return plusConfig.getOutputDir() + plusConfig.getProjectConfig().getName() + "/"
                 + PlusConfig.codePath + plusConfig.getPackagePath() + "config/" +
-                "GlobalCorsFilterConfig.java";
+                "GlobalWebMvcConfig.java";
     }
 
     @Override
     public String getTemplate() {
-        return "config/GlobalCorsFilterConfig.ftl";
+        return "config/GlobalWebMvcConfig.ftl";
     }
 
     @Override
     public Object getDataModel(PlusConfig plusConfig) {
-        return ImmutableMap.of("packageName", plusConfig.getPackageName() + ".config");
+        return ImmutableMap.of("packageName", plusConfig.getPackageName() + ".config",
+                "useCors", plusConfig.isUseCors(), "useInterceptor", plusConfig.isUseInterceptor());
     }
 
     @Override
     public boolean isCreate(PlusConfig plusConfig) {
-        return plusConfig.isUseCors();
+        return plusConfig.isUseCors() || plusConfig.isUseInterceptor();
     }
 }

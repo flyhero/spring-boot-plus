@@ -37,6 +37,8 @@ public class PlusConfig {
 
     private boolean useCors;
 
+    private boolean useInterceptor;
+
     private boolean useJacksonConfig;
 
     /**
