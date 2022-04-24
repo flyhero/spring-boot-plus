@@ -41,21 +41,21 @@ public class JacksonConfig implements InitializingBean {
         javaTimeModule.addSerializer(LocalDateTime.class, new LocalDateTimeSerializer(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
 
         // BigDecimal 保留两位小数
-        javaTimeModule.addSerializer(BigDecimal.class, new JsonSerializer<BigDecimal>() {
+/*      javaTimeModule.addSerializer(BigDecimal.class, new JsonSerializer<BigDecimal>() {
             @Override
             public void serialize(BigDecimal value, JsonGenerator gen, SerializerProvider serializers) throws IOException {
                 DecimalFormat format = new DecimalFormat("#.##");
                 gen.writeString(format.format(value));
             }
-        });
+        }); */
 
-        // 字段保留，将null值转为""
-        objectMapper.getSerializerProvider().setNullValueSerializer(new JsonSerializer<Object>() {
+        // 将null值转为""
+/*      objectMapper.getSerializerProvider().setNullValueSerializer(new JsonSerializer<Object>() {
             @Override
             public void serialize(Object o, JsonGenerator gen, SerializerProvider serializers) throws IOException {
                 gen.writeString("");
             }
-        });
+        }); */
 
         return javaTimeModule;
     }
@@ -66,8 +66,8 @@ public class JacksonConfig implements InitializingBean {
     @Override
     public void afterPropertiesSet() {
 
-        // Include.NON_EMPTY 属性为 空（""） 或者为 NULL 都不序列化，则返回的json是没有这个字段的，这样会更省流量
-        objectMapper.setSerializationInclusion(JsonInclude.Include.NON_EMPTY);
+        // Include.NON_EMPTY 属性为 空（""） 或者为 NULL 都不序列化，则返回的json是没有这个字段的，省流量但前端如果解析不到可能会出错
+        // objectMapper.setSerializationInclusion(JsonInclude.Include.NON_EMPTY);
         //有未知属性 要不要抛异常
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         //确定解析器是否允许使用单引号(撇号，字符'\ ")
