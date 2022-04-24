@@ -21,9 +21,6 @@ public class GlobalWebMvcConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                //是否发送Cookie
-                .allowCredentials(true)
-                //放行哪些原始域
                 .allowedOrigins("*")
                 .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
