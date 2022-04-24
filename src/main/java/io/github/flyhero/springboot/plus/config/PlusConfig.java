@@ -41,6 +41,8 @@ public class PlusConfig {
 
     private boolean useJacksonConfig;
 
+    private boolean useXss;
+
     /**
      * 全局异常统一处理
      */

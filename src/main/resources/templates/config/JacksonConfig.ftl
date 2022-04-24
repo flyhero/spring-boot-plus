@@ -13,6 +13,9 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.annotation.Configuration;
+<if useXss>
+import org.apache.commons.text.StringEscapeUtils;
+</if>
 
 import javax.annotation.Resource;
 import java.io.IOException;
@@ -33,12 +36,12 @@ public class JacksonConfig implements InitializingBean {
         JavaTimeModule javaTimeModule = new JavaTimeModule();
 
         //长整形转字符串：解决长度过长，前端无法处理
-        javaTimeModule.addSerializer(BigInteger.class, ToStringSerializer.instance);
+/*      javaTimeModule.addSerializer(BigInteger.class, ToStringSerializer.instance);
         javaTimeModule.addSerializer(Long.class, ToStringSerializer.instance);
-        javaTimeModule.addSerializer(Long.TYPE, ToStringSerializer.instance);
+        javaTimeModule.addSerializer(Long.TYPE, ToStringSerializer.instance); */
 
         //处理 时间格式
-        javaTimeModule.addSerializer(LocalDateTime.class, new LocalDateTimeSerializer(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+        // javaTimeModule.addSerializer(LocalDateTime.class, new LocalDateTimeSerializer(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
 
         // BigDecimal 保留两位小数
 /*      javaTimeModule.addSerializer(BigDecimal.class, new JsonSerializer<BigDecimal>() {
@@ -48,6 +51,20 @@ public class JacksonConfig implements InitializingBean {
                 gen.writeString(format.format(value));
             }
         }); */
+
+    <if useXss>
+        // 反序列化 xss过滤
+        javaTimeModule.addDeserializer(String.class, new JsonDeserializer<String>() {
+            @Override
+            public String deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JacksonException {
+                String value = jsonParser.getValueAsString();
+                if (value != null) {
+                    return StringEscapeUtils.escapeHtml4(value);
+                }
+                return value;
+            }
+        });
+    </if>
 
         // 将null值转为""
 /*      objectMapper.getSerializerProvider().setNullValueSerializer(new JsonSerializer<Object>() {
