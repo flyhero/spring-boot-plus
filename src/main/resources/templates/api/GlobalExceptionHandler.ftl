@@ -1,6 +1,10 @@
 package ${packageName}.exception;
 
+
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -9,7 +13,6 @@ import ${packageName}.model.Result;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -17,12 +20,15 @@ import org.springframework.http.server.ServerHttpRequest;
 import org.springframework.http.server.ServerHttpResponse;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
+
 @Slf4j
+@AllArgsConstructor
 @RestControllerAdvice
 public class GlobalExceptionHandler implements ResponseBodyAdvice<Object> {
 
-    @Autowired
     private ObjectMapper objectMapper;
+
+    private MessageSource messageSource;
 
     /**
     * 是否开启功能
@@ -53,15 +59,16 @@ public class GlobalExceptionHandler implements ResponseBodyAdvice<Object> {
     }
 
 
-    @ExceptionHandler({MethodArgumentNotValidException.class})
-    public Result handler(MethodArgumentNotValidException ex) {
-        FieldError fieldError = ex.getBindingResult().getFieldError();
-        return Result.error(400, fieldError.getField() + fieldError.getDefaultMessage());
-    }
-
     @ExceptionHandler({Exception.class})
     public Result handler(Exception ex) {
-        log.error("出现未知异常：", ex);
-        return Result.error(500, ex.getMessage());
+        log.error("出现未知异常：{}", ex.getMessage(), ex);
+        return Result.error(ErrorEnum.ERROR);
+    }
+
+    @ExceptionHandler({NotExistException.class})
+        public Result handler(NotExistException ex) {
+        log.error("资源不存在：{}", ex.getMessage(), ex);
+        Errors errors = ex.getErrors();
+        return Result.error(errors);
     }
 }
