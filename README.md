@@ -12,18 +12,24 @@
 ## Introduction - 介绍
 
 ### Summary - 概要
-springboot代码生成器，主要用于对一些常用功能的自动配置，省去CV操作。
+springboot代码生成器，适用于前后端分离的单体项目，主要用于对一些常用功能的自动配置，省去CV操作。
 
 ### Features - 特性
 
 - 日志配置
 - 异常统一处理
 - cors跨域设置
+- 拦截器
 - 序列化配置
-- xss防攻击
 - mybatis-plus配置
 - mybatis-plus代码生成
 - README模板生成
+- xss防攻击
+
+TODO：
+
+- 国际化
+- util常用类
 
 ## Usage - 用法
 
