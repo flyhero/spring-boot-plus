@@ -66,9 +66,15 @@ public class GlobalExceptionHandler implements ResponseBodyAdvice<Object> {
     }
 
     @ExceptionHandler({NotExistException.class})
-        public Result handler(NotExistException ex) {
+    public Result handleNotExistException(NotExistException ex) {
         log.error("资源不存在：{}", ex.getMessage(), ex);
-        Errors errors = ex.getErrors();
-        return Result.error(errors);
+
+    <#if useI18n>
+        String message = messageSource.getMessage(errors.msg(), null, LocaleContextHolder.getLocale());
+        return Result.error(errors.code(), message);
+    <#else>
+        return Result.error(ex.getErrors());
+    </#if>
+
     }
 }

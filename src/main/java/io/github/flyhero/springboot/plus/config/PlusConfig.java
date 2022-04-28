@@ -48,6 +48,8 @@ public class PlusConfig {
      */
     private boolean useExceptionHandler;
 
+    private boolean useI18n;
+
     // logback or log4j2
     private String logWay = "logback";
 

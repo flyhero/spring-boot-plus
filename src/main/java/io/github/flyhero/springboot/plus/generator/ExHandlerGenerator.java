@@ -24,7 +24,7 @@ public class ExHandlerGenerator extends AbstractGenerator {
 
     @Override
     public Object getDataModel(PlusConfig plusConfig) {
-        return ImmutableMap.of("packageName", plusConfig.getPackageName());
+        return ImmutableMap.of("packageName", plusConfig.getPackageName(), "useI18n", plusConfig.isUseI18n());
     }
 
     @Override
