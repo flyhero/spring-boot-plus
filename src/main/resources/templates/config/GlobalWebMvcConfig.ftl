@@ -45,6 +45,13 @@ public class GlobalWebMvcConfig implements WebMvcConfigurer {
      */
     public static class TestInterceptor implements HandlerInterceptor {
 
+        @Override
+        boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+            //不是接口请求不拦截
+            if (!(handler instanceof HandlerMethod)){
+                return true;
+            }
+        }
     }
 </#if>
 }
