@@ -23,13 +23,14 @@ springboot代码生成器，适用于前后端分离的单体项目，主要用�
 - 序列化配置
 - mybatis-plus配置
 - mybatis-plus代码生成
-- README模板生成
+
 - xss防攻击
+- 国际化
 
 TODO：
-
-- 国际化
 - util常用类
+- README模板生成
+- 帮助文档生成
 
 ## Usage - 用法
 
