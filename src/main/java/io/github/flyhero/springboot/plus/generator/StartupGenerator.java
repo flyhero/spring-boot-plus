@@ -3,7 +3,12 @@ package io.github.flyhero.springboot.plus.generator;
 import com.google.common.base.CaseFormat;
 import com.google.common.collect.ImmutableMap;
 import io.github.flyhero.springboot.plus.config.PlusConfig;
+import io.github.flyhero.springboot.plus.util.EntityUtils;
 import org.springframework.stereotype.Component;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 /**
  * @author WangQingFei(qfwang666 @ 163.com)
@@ -27,7 +32,16 @@ public class StartupGenerator extends AbstractGenerator {
     @Override
     public Object getDataModel(PlusConfig plusConfig) {
         String applicationJavaName = toCamel(plusConfig.getProjectConfig().getArtifactId());
-        return ImmutableMap.of("packageName", plusConfig.getPackageName(), "className", applicationJavaName);
+        Map<String, Object> map = new HashMap<>();
+        if (Objects.nonNull(plusConfig.getDataSourceConfig())) {
+            map = EntityUtils.entityToMap(plusConfig.getDataSourceConfig());
+            map.put("hasDbConfig", true);
+        } else {
+            map.put("hasDbConfig", false);
+        }
+        map.put("packageName", plusConfig.getPackageName());
+        map.put("className", applicationJavaName);
+        return map;
     }
 
     // 驼峰命名
