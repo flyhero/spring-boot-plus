@@ -50,6 +50,8 @@ public class PlusConfig {
 
     private boolean useI18n;
 
+    private boolean useEasyLog;
+
     // logback or log4j2
     private String logWay = "logback";
 

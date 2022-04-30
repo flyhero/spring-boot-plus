@@ -780,6 +780,17 @@
             "href": "https://codecentric.github.io/spring-boot-admin/current/#getting-started"
           }
         }
+      },
+      {
+        "id": "easy-log",
+        "name": "EasyLog : operation log",
+        "dependency": {
+          "groupId": "io.github.flyhero",
+          "artifactId": "easylog-spring-boot-starter",
+          "version": "1.0.1",
+          "optional": null,
+          "scope": null
+        }
       }
     ]
   }
