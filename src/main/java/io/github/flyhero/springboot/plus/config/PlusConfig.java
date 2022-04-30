@@ -5,8 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author WangQingFei(qfwang666 @ 163.com)
@@ -28,7 +28,7 @@ public class PlusConfig {
 
     private DataSourceConfig dataSourceConfig;
 
-    private List<String> dependencies = new ArrayList<>();
+    private Set<String> dependencies = new HashSet<>();
 
     // jdbc  hib mybatis
     private String ormWay = "";
