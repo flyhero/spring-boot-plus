@@ -23,4 +23,9 @@ public class ExErrorEnumGenerator extends AbstractGenerator {
     public Object getDataModel(PlusConfig plusConfig) {
         return ImmutableMap.of("packageName", plusConfig.getPackageName() + ".exception");
     }
+
+    @Override
+    public boolean isCreate(PlusConfig plusConfig) {
+        return plusConfig.isUseExceptionHandler();
+    }
 }
