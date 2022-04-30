@@ -13,6 +13,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * @author WangQingFei(qfwang666 @ 163.com)
@@ -39,7 +40,7 @@ public class PomGenerator extends AbstractGenerator {
     public Object getDataModel(PlusConfig plusConfig) {
         Map<String, Object> map = EntityUtils.entityToMap(plusConfig.getProjectConfig());
         plusConfig.getDependencies().add(plusConfig.getDataSourceConfig().getType().name());
-        List<String> dependenciesStrs = plusConfig.getDependencies();
+        Set<String> dependenciesStrs = plusConfig.getDependencies();
         List<Dependency> dependencies = new ArrayList<>();
         for (DependencyData dependency : dataLoader.getDependencies()) {
             for (DependencyData.Value value : dependency.getValues()) {
